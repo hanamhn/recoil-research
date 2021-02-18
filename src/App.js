@@ -1,16 +1,25 @@
-// import PureTodos from "./PureTodos";
-// import Todos from "./Todos";
+import React, { Component } from "react";
+import Child from "./Child";
 
-import CartInfo from "./features/cart/components/CartInfo";
-import ProductList from "./features/cart/components/ProductList";
+export default class App extends Component {
+  state = {
+    time: new Date(),
+  };
 
-function App() {
-  return (
-    <div>
-      <ProductList />
-      <CartInfo />
-    </div>
-  );
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({
+        time: new Date(),
+      });
+    }, 1000);
+  }
+
+  render() {
+    return (
+      <div>
+        <Child seconds={1} />
+        {this.state.time.toString()}
+      </div>
+    );
+  }
 }
-
-export default App;
