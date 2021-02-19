@@ -1,9 +1,12 @@
 import React from "react";
+import ClassCounterOne from "./components/ClassCounterOne";
+import HookCounterOne from "./components/HookCounterOne";
 
 const App = () => {
   return (
     <div>
-      <h2>App</h2>
+      <ClassCounterOne />
+      {/* <HookCounterOne /> */}
     </div>
   );
 };
